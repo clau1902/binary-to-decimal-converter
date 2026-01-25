@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Binary to Decimal Converter
+
+A simple and elegant web application that converts binary numbers to decimal numbers in real-time. Built with Next.js, TypeScript, and styled with Tailwind CSS and shadcn/ui components.
+
+## Description
+
+This app provides a user-friendly interface for converting binary numbers (base 2) to decimal numbers (base 10). Simply enter a binary number consisting of 0s and 1s, and the decimal equivalent will be displayed instantly. The app includes input validation to ensure only valid binary digits are entered.
+
+### Features
+
+- **Real-time conversion**: See decimal results as you type
+- **Input validation**: Only accepts valid binary digits (0s and 1s)
+- **Error handling**: Clear error messages for invalid input
+- **Modern UI**: Beautiful pastel color palette with shadcn/ui components
+- **Responsive design**: Works seamlessly on all screen sizes
+- **Dark mode support**: Automatic theme support
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ installed
+- npm, yarn, pnpm, or bun package manager
+
+### Installation
+
+1. Clone the repository or navigate to the project directory:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd binary-to-number
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Learn More
+### Building for Production
 
-To learn more about Next.js, take a look at the following resources:
+To create an optimized production build:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How to Use
 
-## Deploy on Vercel
+1. Enter a binary number (e.g., `1010`) in the input field
+2. The decimal result will appear automatically below
+3. Invalid characters will show an error message
+4. Click the "Clear" button to reset the converter
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tech Stack
+
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript
+- **UI Library**: React 19
+- **Styling**: Tailwind CSS v4
+- **Components**: shadcn/ui
