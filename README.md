@@ -13,5 +13,5 @@ This app provides a user-friendly interface for converting binary numbers (base 
 - **Error handling**: Clear error messages for invalid input
 - **Modern UI**: Beautiful pastel color palette with shadcn/ui components
 - **Responsive design**: Works seamlessly on all screen sizes
-- **Dark mode support**: Automatic theme support
+- **Dark mode support**: Automatic theme support.
 
