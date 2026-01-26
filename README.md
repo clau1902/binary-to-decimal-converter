@@ -12,6 +12,6 @@ This app provides a user-friendly interface for converting binary numbers (base 
 - **Input validation**: Only accepts valid binary digits (0s and 1s)
 - **Error handling**: Clear error messages for invalid input
 - **Modern UI**: Beautiful pastel color palette with shadcn/ui components
-- **Responsive design**: Works seamlessly on all screen sizes
+- **Responsive design**: Works seamlessly on all screen sizes.
 - **Dark mode support**: Automatic theme support
 
