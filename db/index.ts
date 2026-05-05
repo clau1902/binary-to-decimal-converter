@@ -5,7 +5,7 @@ import * as schema from "./schema";
 let dbInstance: ReturnType<typeof drizzle> | null = null;
 
 function getDatabaseUrl() {
-  const url = process.env.DATABASE_URL;
+  const url = process.env.DATABASE_URL || process.env.POSTGRES_URL;
   if (!url) {
     // During build time, we don't need a real connection
     if (typeof window === "undefined" && process.env.NEXT_PHASE !== "phase-production-build") {

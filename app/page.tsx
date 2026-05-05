@@ -233,7 +233,7 @@ export default function Home() {
 
         <Card className="w-full">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold">Search History</CardTitle>
+              <CardTitle className="text-2xl font-bold">Conversions History</CardTitle>
               <CardDescription>
                 Your saved conversions
               </CardDescription>
@@ -241,7 +241,7 @@ export default function Home() {
             <CardContent>
               {savedSearches.length === 0 ? (
                 <p className="text-muted-foreground text-center py-8">
-                  No saved searches yet. Save a conversion to see it here.
+                  No saved conversions yet. Save a conversion to see it here.
                 </p>
               ) : (
                 <div className="space-y-3 max-h-[600px] overflow-y-auto">

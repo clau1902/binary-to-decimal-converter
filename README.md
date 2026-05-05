@@ -13,7 +13,7 @@ This app provides a user-friendly interface for converting binary numbers (base 
 - **Input validation**: Only accepts valid binary digits (0s and 1s) or hexadecimal digits (0-9, A-F)
 - **Error handling**: Clear error messages for invalid input
 - **Save searches**: Save your conversions to the database
-- **Search history**: View and reload your previously saved conversions
+- **Conversions history**: View and reload your previously saved conversions
 - **Modern UI**: Beautiful pastel color palette with shadcn/ui components
 - **Responsive design**: Works seamlessly on all screen sizes
 - **Dark mode support**: Automatic theme support
