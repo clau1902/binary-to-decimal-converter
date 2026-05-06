@@ -204,10 +204,7 @@ export default function Home() {
                 {decimal.toLocaleString()}
               </div>
             ) : (
-              <>
-                <div className="t-result-cursor">█</div>
-                <div className="t-empty-hint">← type a number to convert</div>
-              </>
+              <div className="t-empty-hint">← type a number to convert</div>
             )}
 
             {decimal !== null && !error && (
