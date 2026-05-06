@@ -474,6 +474,35 @@ body::after {
   opacity: 0.5;
 }
 
+/* ─── SMART HINTS ────────────────────────────────── */
+
+.t-empty-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 28px;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--text-dim);
+  opacity: 0;
+  animation: fadeHint 0.8s ease 0.4s forwards;
+}
+
+@keyframes fadeHint {
+  to { opacity: 0.5; }
+}
+
+.t-attract {
+  animation: attractPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes attractPulse {
+  0%, 100% { border-color: var(--border); box-shadow: none; }
+  50% {
+    border-color: var(--green);
+    box-shadow: 0 0 0 1px var(--green), 0 0 18px var(--green-glow);
+  }
+}
+
 /* ─── ANIMATIONS ─────────────────────────────────── */
 
 @keyframes pulse {

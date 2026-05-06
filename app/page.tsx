@@ -117,32 +117,31 @@ export default function Home() {
       <main className="t-main">
         {/* ── Left panel: input ── */}
         <section className="t-left">
-
-          {/* Mode selector */}
           <div>
             <div className="t-label">Input mode</div>
             <div className="t-mode-wrap">
               <button
                 className={`t-mode-btn ${isBin ? "m-bin" : ""}`}
                 onClick={() => { setActiveTab("binary"); setError(""); }}
+                type="button"
               >
                 BIN
               </button>
               <button
                 className={`t-mode-btn ${!isBin ? "m-hex" : ""}`}
                 onClick={() => { setActiveTab("hexadecimal"); setError(""); }}
+                type="button"
               >
                 HEX
               </button>
             </div>
           </div>
 
-          {/* Input field */}
           <div>
             <div className="t-label">
               {isBin ? "Binary  [0, 1]" : "Hex  [0–9, A–F]"}
             </div>
-            <div className={`t-input-wrap ${isBin ? "bin-focus" : "hex-focus"}`}>
+            <div className={`t-input-wrap ${isBin ? "bin-focus" : "hex-focus"} ${!currentInput ? "t-attract" : ""}`}>
               <span className="t-prompt-sym">›</span>
               {isBin ? (
                 <input
@@ -154,6 +153,8 @@ export default function Home() {
                   onChange={(e) => handleBinaryChange(e.target.value)}
                   autoComplete="off"
                   spellCheck={false}
+                  aria-label="Binary input"
+                  name="binary"
                 />
               ) : (
                 <input
@@ -165,18 +166,20 @@ export default function Home() {
                   onChange={(e) => handleHexadecimalChange(e.target.value)}
                   autoComplete="off"
                   spellCheck={false}
+                  aria-label="Hexadecimal input"
+                  name="hexadecimal"
                 />
               )}
             </div>
             {error && <div className="t-error">! {error}</div>}
           </div>
 
-          {/* Buttons */}
           <div className="t-btns">
             <button
               className="t-btn"
               onClick={handleSave}
               disabled={decimal === null || !!error || isSaving}
+              type="button"
             >
               {isSaving ? "···" : "SAVE"}
             </button>
@@ -184,34 +187,27 @@ export default function Home() {
               className="t-btn t-btn-sec"
               onClick={handleClear}
               disabled={!currentInput && decimal === null}
+              type="button"
             >
               CLR
             </button>
-          </div>
-
-          {/* Guide */}
-          <div className="t-guide">
-            <div className="t-label">How to use</div>
-            <div className="t-guide-line">Select BIN or HEX mode</div>
-            <div className="t-guide-line">Type your number</div>
-            <div className="t-guide-line">Result appears instantly</div>
-            <div className="t-guide-line">Save to keep a record</div>
           </div>
         </section>
 
         {/* ── Right panel: result + history ── */}
         <section className="t-right">
-
-          {/* Result display */}
           <div className="t-result-area">
             <span className="t-result-tag">// decimal output</span>
 
             {decimal !== null && !error ? (
-              <div className={`t-result-num ${!isBin ? "is-hex" : ""}`}>
+              <div className={`t-result-num tabular-nums ${!isBin ? "is-hex" : ""}`}>
                 {decimal.toLocaleString()}
               </div>
             ) : (
-              <div className="t-result-cursor">█</div>
+              <>
+                <div className="t-result-cursor">█</div>
+                <div className="t-empty-hint">← type a number to convert</div>
+              </>
             )}
 
             {decimal !== null && !error && (
@@ -224,15 +220,12 @@ export default function Home() {
             )}
           </div>
 
-          {/* History */}
           <div className="t-history">
             <div className="t-history-head">
               // conversion log ({savedSearches.length})
             </div>
             {savedSearches.length === 0 ? (
-              <div className="t-history-empty">
-                No saved conversions yet
-              </div>
+              <div className="t-history-empty">No saved conversions yet</div>
             ) : (
               savedSearches.map((s) => (
                 <div
@@ -244,7 +237,7 @@ export default function Home() {
                   <span className="t-h-type">[{s.inputType.slice(0, 3).toUpperCase()}]</span>
                   <span className="t-h-input">{s.inputValue}</span>
                   <span className="t-h-arrow">→</span>
-                  <span className="t-h-result">{parseInt(s.decimalResult).toLocaleString()}</span>
+                  <span className="t-h-result tabular-nums">{parseInt(s.decimalResult).toLocaleString()}</span>
                   <span className="t-h-time">{formatDate(s.createdAt)}</span>
                 </div>
               ))
