@@ -288,8 +288,8 @@ body::after {
 }
 
 .t-btn.t-btn-sec {
-  border-color: var(--border);
-  color: var(--text-dim);
+  border-color: #2e3f38;
+  color: #8ab89a;
 }
 
 .t-btn.t-btn-sec:hover:not(:disabled) {
